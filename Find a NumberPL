@@ -1,0 +1,16 @@
+szukanaLiczba = 0
+zgadywanaLiczba = 0
+licznik = int(1)
+
+szukanaLiczba = int(input("Podaj liczbę, którą będzimy zgadywać "))
+
+while zgadywanaLiczba != szukanaLiczba:
+    zgadywanaLiczba = int(input("Odgadnij liczbę: "))
+    if (zgadywanaLiczba > szukanaLiczba):
+        print("Wpisałeś zbyt dużą liczbę, spróbuj z mniejszą")
+        licznik += 1
+    elif (zgadywanaLiczba < szukanaLiczba):
+        print("Wpisałeś zbyt dużą liczbę, spróbój z większą")
+        licznik += 1
+    else:
+        print("Brawo! Udało ci się zgadnąć liczbę za", licznik, "razem ")
