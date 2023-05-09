@@ -1,0 +1,31 @@
+while True:
+
+    matma = input("Wybierz działanie \n + - dodawanie \n - -odejmowanie \n * - mnożenie \n / - dzielenie \n")
+    a = int(input("Pordaj pierwszą liczbę: "))
+    b = int(input("Podaj drugą liczbę: "))
+
+
+    if (matma == "+"):
+        print("Wynik to:", a + b)
+    elif (matma == "-"):
+        print("Wynik to:", a - b)
+    elif (matma == "*"):
+        while (a == 0 or b == 0):
+            print("Nie mnożymy przez 0, podaj liczbę różną od 0 ")
+            a = int(input("Podaj pierwszą liczbę: "))
+            b = int(input("Podaj drugą liczbę: "))
+        else:
+            print("Wynik to:", a * b)
+    elif (matma == "/"):
+        while (a == 0 or b == 0):
+            print("Nie dzielimy przez 0, podaj liczbę różną od 0 ")
+            a = int(input("Podaj pierwszą liczbę "))
+            b = int(input("Podaj drugą liczbę "))
+        else:
+            print("Wynik to:", a / b)
+    else:
+        print("Nieprawidłowy wybór ")
+    
+    pytanie = input("Czy chcesz kontynuować? (tak/nie) ")
+    if pytanie.upper() == "NIE":
+        break
