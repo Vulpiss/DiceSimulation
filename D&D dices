@@ -1,0 +1,51 @@
+import random
+
+def roll_dice(kostka, mod=0):
+    """
+    Symuluje rzut kością o podanej liczbie ścianek z dodanym modyfikatorem.
+
+    Parametry:
+    kostka (int): liczba ścianek na kostce
+    mod (int, opcjonalne): modyfikator do dodania do wyniku rzutu
+
+    Zwraca:
+    int: wynik rzutu kością z dodanym modyfikatorem
+    """
+    roll = random.randint(1, kostka)
+    rollmod = roll + mod
+    print(f"1d{kostka} na kości to: {roll} twój modyfikator to:",mod,"Łącznie:",rollmod)
+    if roll == kostka:
+        print("FULL!")
+    return rollmod
+
+max_roll = 0
+
+while True:
+    rzut = input("Wybierz kostkę którą chcesz rzucić: \n d4 \n d6 \n d8 \n d10 \n d12 \n d20 \n")
+    mod = int(input("Podaj swój modyfikator: "))
+    roll = 0
+    rollmod = 0
+    if rzut == "d4":
+        rollmod = roll_dice(4, mod)
+    elif rzut == "d6":
+        rollmod = roll_dice(6, mod)
+    elif rzut == "d8":
+        rollmod = roll_dice(8, mod)
+    elif rzut == "d10":
+        rollmod = roll_dice(10, mod)
+    elif rzut == "d12":
+        rollmod = roll_dice(12, mod)
+    elif rzut == "d20":
+        rollmod = roll_dice(20, mod)
+    else:
+        print("Niewłaściwy wybór")
+
+    if rollmod > max_roll:
+        max_roll = rollmod
+
+    pytanie = input("Czy chcesz rzucić jeszcze raz? (tak/nie) ")
+    if pytanie.upper() == "NIE":
+        break
+
+if max_roll > 0:
+    print("Największy osiągnięty wynik to:", max_roll)
